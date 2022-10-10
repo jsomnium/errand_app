@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
                 Text('공지',
                     style: TextStyle(
                       fontSize: 13,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w800,
                       fontFamily: "Pre",
                     )),
                 SizedBox(
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
                 Text('덕부름에 새로운 기능이 추가됐어요.',
                     style: TextStyle(
                       fontSize: 13,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       fontFamily: "Pre",
                     ))
               ]),
@@ -88,9 +88,9 @@ class MyApp extends StatelessWidget {
                         Text(
                           'EVENT',
                           style: TextStyle(
-                              fontSize: 26,
+                              fontSize: 18,
                               color: Colors.white,
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.w300,
                               fontFamily: "Pre"),
                         ),
                         SizedBox(
@@ -100,9 +100,9 @@ class MyApp extends StatelessWidget {
                         Text(
                           'SEVENTEEN Photo',
                           style: TextStyle(
-                              fontSize: 26,
+                              fontSize: 22,
                               color: Colors.white,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w800,
                               fontFamily: "Pre"),
                         ),
                         SizedBox(
@@ -113,7 +113,7 @@ class MyApp extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.w300,
                                 fontFamily: "Pre")),
                       ],
                     ),
@@ -160,7 +160,7 @@ class MyApp extends StatelessWidget {
                             '덕질 관련 심부름을 신청해 보세요!',
                             style: TextStyle(
                                 fontSize: 14,
-                                fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.w500,
                                 color: Colors.white,
                                 fontFamily: "Pre"),
                           ),
@@ -179,44 +179,55 @@ class MyApp extends StatelessWidget {
                       // 화살표 아이콘
                       Icons.arrow_forward_sharp,
                       color: Colors.white,
-                      size: 15.5,
+                      size: 17,
                     ),
                   ),
                 ],
               ),
             ),
-            Stack(
-              children: [
-                Container(
-                  // 최근 등록된 심부름 수정해야됨
-                  width: double.infinity,
-                  margin: EdgeInsets.fromLTRB(24, 40, 0, 0), //바깥쪽
-                  child: Text('최근 등록된 심부름',
+            Container(
+              // [최근 등록된 심부름] Container
+              width: double.infinity,
+              margin: EdgeInsets.fromLTRB(24, 40, 24, 0), // 바깥쪽
+              child: Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.spaceBetween, // 양끝 여백 없이 정렬
+                children: [
+                  SizedBox(
+                    // '최근 등록된 심부름' Text SizedBox
+                    child: Text(
+                      '최근 등록된 심부름',
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w800,
-                          fontFamily: "Pre")),
-                ),
-                Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.fromLTRB(307, 40, 0, 0), //바깥쪽
-                  child: Text('더보기',
-                      style: TextStyle(
-                          fontSize: 13,
-                          color: Color(0xffB1B1B4),
-                          fontWeight: FontWeight.w400,
-                          fontFamily: "Pre")),
-                ),
-                Container(
-                  //더보기 버튼
-                  margin: EdgeInsets.fromLTRB(347, 40, 0, 0), //바깥쪽
-                  child: Icon(
-                    Icons.keyboard_arrow_right,
-                    color: Color(0xffB1B1B4),
-                    size: 15,
+                          fontFamily: "Pre"),
+                    ),
                   ),
-                )
-              ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end, // 오른쪽 정렬
+                    children: [
+                      SizedBox(
+                        child: Text(
+                          '더보기',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xffB1B1B4),
+                              fontFamily: "Pre"),
+                        ),
+                      ),
+                      SizedBox(width: 6),
+                      SizedBox(
+                        child: Icon(
+                          Icons.arrow_forward_ios_sharp,
+                          size: 9,
+                          color: Color(0xffB1B1B4),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
             Container(
               // 등록된 심부름들 container
@@ -266,7 +277,7 @@ class MyApp extends StatelessWidget {
                             '서울 광진구',
                             style: TextStyle(
                                 fontSize: 14,
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w800,
                                 fontFamily: "Pre"),
                           ),
                         ),
@@ -306,7 +317,7 @@ class MyApp extends StatelessWidget {
                                   '+2',
                                   style: TextStyle(
                                       fontSize: 12,
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.w800,
                                       color: Color(0xffF8F8F8),
                                       fontFamily: "Pre"),
                                 ),
@@ -321,7 +332,7 @@ class MyApp extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Color(0xffB1B1B4),
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w500,
                                   fontFamily: "Pre")),
                         ),
                       ],
@@ -367,7 +378,7 @@ class MyApp extends StatelessWidget {
                             '서울 광진구',
                             style: TextStyle(
                                 fontSize: 14,
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w800,
                                 fontFamily: "Pre"),
                           ),
                         ),
@@ -403,7 +414,7 @@ class MyApp extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Color(0xffB1B1B4),
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w500,
                                   fontFamily: "Pre")),
                         ),
                       ],
@@ -449,7 +460,7 @@ class MyApp extends StatelessWidget {
                             '서울 광진구',
                             style: TextStyle(
                                 fontSize: 14,
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w800,
                                 fontFamily: "Pre"),
                           ),
                         ),
@@ -489,7 +500,7 @@ class MyApp extends StatelessWidget {
                                   '+2',
                                   style: TextStyle(
                                       fontSize: 12,
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.w800,
                                       color: Color(0xffF8F8F8),
                                       fontFamily: "Pre"),
                                 ),
@@ -504,7 +515,7 @@ class MyApp extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Color(0xffB1B1B4),
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w500,
                                   fontFamily: "Pre")),
                         ),
                       ],
@@ -518,57 +529,61 @@ class MyApp extends StatelessWidget {
               width: double.infinity,
               height: 86,
               color: Color(0xffF7FFE7),
-              margin: EdgeInsets.fromLTRB(20, 29, 20, 0),
-              padding: EdgeInsets.all(19),
-              child: Row(children: [
-                Container(
-                  height: 48,
-                  width: 48,
-                  decoration: BoxDecoration(
-                      color: Color(0xffDBFFAC), shape: BoxShape.circle),
-                  child: Center(
-                    child: Text(
-                      'Tip!',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Poppins"),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  // 줄 간격
-                  width: 17,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('덕부름 이용 방법',
+              margin: EdgeInsets.fromLTRB(20, 29, 20, 10), // 바깥쪽
+              padding: EdgeInsets.all(19), // 안쪽
+              child: Row(
+                children: [
+                  Container(
+                    // 'Tip!' 녹색 원 Container
+                    height: 48,
+                    width: 48,
+                    margin: EdgeInsets.fromLTRB(0, 0, 17, 0),
+                    decoration: BoxDecoration(
+                        color: Color(0xffDBFFAC), shape: BoxShape.circle),
+                    child: Center(
+                      child: Text(
+                        'Tip!',
                         style: TextStyle(
                             fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: "Pre")),
-                    SizedBox(
-                      height: 5,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: "Poppins"),
+                      ),
                     ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          child: Text('덕부름의 이용 방법을 알아보세요!',
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: "Pre")),
-                        ),
-                        Icon(
-                          Icons.keyboard_arrow_right_sharp,
-                          color: Color(0xff6C6C6C),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ]),
+                  ),
+                  Column(
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        '덕부름 이용 방법',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: "Pre"),
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            child: Text('덕부름의 이용 방법을 알아보세요!',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xff3E3E40),
+                                    fontFamily: "Pre")),
+                          ),
+                          Icon(
+                            Icons.keyboard_arrow_right_sharp,
+                            color: Color(0xff6C6C6C),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             )
           ],
         ),
