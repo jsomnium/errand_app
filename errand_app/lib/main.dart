@@ -312,6 +312,189 @@ class MyApp extends StatelessWidget {
                       ],
                     ),
                   ),
+                  Container(
+                    // 등록된 심부름_2
+                    width: 144,
+                    height: 144,
+                    margin: EdgeInsets.fromLTRB(0, 0, 12, 0), // 바깥쪽
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(14),
+                      border: Border.all(
+                        width: 1,
+                        color: Color(0xffF0E9FF),
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          // 시급 컨테이너
+                          margin: EdgeInsets.fromLTRB(14, 14, 0, 0), // 바깥쪽
+                          decoration: BoxDecoration(
+                            color: Color(0xffF0E9FF),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          height: 23,
+                          width: 58,
+                          child: Center(
+                            child: Text('시급 1만원',
+                                style: TextStyle(
+                                    fontSize: 11,
+                                    color: Color(0xff8F5BFF),
+                                    fontWeight: FontWeight.w800,
+                                    fontFamily: "Pre")),
+                          ),
+                        ),
+                        Container(
+                          // '장소' 컨테이너
+                          margin: EdgeInsets.fromLTRB(14, 10, 0, 0),
+                          child: Text(
+                            '서울 광진구',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w900,
+                                fontFamily: "Pre"),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              // '할 일' 컨테이너
+                              margin: EdgeInsets.fromLTRB(10, 8, 0, 0), // 바깥쪽
+                              height: 30,
+                              width: 81,
+                              decoration: BoxDecoration(
+                                color: Color(0xffF8F8F8),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '행사 대리줄서기',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xff3C88FA),
+                                      fontWeight: FontWeight.w800,
+                                      fontFamily: "Pre"),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          // '시간' 컨테이너
+                          margin: EdgeInsets.fromLTRB(14, 10, 0, 0), // 바깥쪽
+                          child: Text('8/6 오후 8:00',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xffB1B1B4),
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: "Pre")),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    // 등록된 심부름_3
+                    width: 139,
+                    height: 144,
+                    margin: EdgeInsets.fromLTRB(0, 0, 12, 0), // 바깥쪽
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(14),
+                      border: Border.all(
+                        width: 1,
+                        color: Color(0xffF1F1F1),
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          // 시급 컨테이너
+                          margin: EdgeInsets.fromLTRB(14, 14, 0, 0), // 바깥쪽
+                          decoration: BoxDecoration(
+                            color: Color(0xffE0F4F8),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          height: 23,
+                          width: 58,
+                          child: Center(
+                            child: Text('시급 1만원',
+                                style: TextStyle(
+                                    fontSize: 11,
+                                    color: Color(0xff04BCD6),
+                                    fontWeight: FontWeight.w800,
+                                    fontFamily: "Pre")),
+                          ),
+                        ),
+                        Container(
+                          // '장소' 컨테이너
+                          margin: EdgeInsets.fromLTRB(14, 10, 0, 0),
+                          child: Text(
+                            '서울 광진구',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w900,
+                                fontFamily: "Pre"),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              // '할 일' 컨테이너
+                              margin: EdgeInsets.fromLTRB(10, 8, 0, 0), // 바깥쪽
+                              height: 30,
+                              width: 81,
+                              decoration: BoxDecoration(
+                                color: Color(0xffF8F8F8),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '팬싸 대리응모',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xff3C88FA),
+                                      fontWeight: FontWeight.w800,
+                                      fontFamily: "Pre"),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              // 동그라미 '+2' 컨테이너
+                              margin: EdgeInsets.fromLTRB(6, 10, 0, 0), // 바깥쪽
+                              height: 26,
+                              width: 26,
+                              decoration: BoxDecoration(
+                                  color: Color(0xff3C88FA),
+                                  shape: BoxShape.circle),
+                              child: Center(
+                                child: Text(
+                                  '+2',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xffF8F8F8),
+                                      fontFamily: "Pre"),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          // '시간' 컨테이너
+                          margin: EdgeInsets.fromLTRB(14, 10, 0, 0), // 바깥쪽
+                          child: Text('8/6 오후 8:00',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xffB1B1B4),
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: "Pre")),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
