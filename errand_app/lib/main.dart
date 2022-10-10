@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         body: ListView(
           children: [
             Container(
-              // 공지 Container
+              // [공지] Container
               width: double.infinity,
               height: 40,
               margin: EdgeInsets.fromLTRB(20, 8, 20, 0), // 바깥쪽
@@ -121,54 +121,69 @@ class MyApp extends StatelessWidget {
                 ),
               ],
             ),
-            Stack(
-              children: [
-                Container(
-                  // 심부름 신청 하러가기
-                  width: double.infinity,
-                  height: 80,
-                  padding: EdgeInsets.fromLTRB(18, 20, 0, 0), //안쪽
-                  margin: EdgeInsets.fromLTRB(20, 0, 20, 0), //바깥쪽
-                  decoration: BoxDecoration(
-                    color: Color(0xff1F1F21),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: SizedBox(
+            Container(
+              // [심부름 신청하러 가기] Container
+              width: double.infinity,
+              height: 80,
+              margin: EdgeInsets.fromLTRB(20, 0, 20, 0), //바깥쪽
+              decoration: BoxDecoration(
+                color: Color(0xff1F1F21),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.spaceBetween, // 양끝 여백 없이 정렬
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    // 텍스트 두 줄
+                    margin: EdgeInsets.fromLTRB(18, 20, 0, 0), // 바깥쪽
+                    width: 187,
+                    height: 41,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment:
+                          MainAxisAlignment.spaceBetween, // 양끝 여백 없이 정렬
                       children: [
-                        Text(
-                          '심부름 신청하러 가기',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: "Pre"),
+                        SizedBox(
+                          child: Text(
+                            '심부름 신청하러 가기',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                                fontFamily: "Pre"),
+                          ),
                         ),
                         SizedBox(
-                          height: 5,
+                          child: Text(
+                            '덕질 관련 심부름을 신청해 보세요!',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                                fontFamily: "Pre"),
+                          ),
                         ),
-                        Text(
-                          '덕질 관련 심부름을 신청해보세요!',
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: "Pre"),
-                        )
                       ],
                     ),
                   ),
-                ),
-                Container(
-                  // 심부름 신청 하러가기 버튼
-                  width: 40,
-                  height: 40,
-                  margin: EdgeInsets.fromLTRB(271, 20, 0, 0), //바깥쪽
-                  child: Icon(Icons.arrow_circle_right_sharp,
-                      color: Colors.white, size: 45),
-                )
-              ],
+                  Container(
+                    // 동그란 화살표
+                    margin: EdgeInsets.fromLTRB(0, 20, 24, 0), // 바깥쪽
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        color: Color(0xff3E3E40), shape: BoxShape.circle),
+                    child: Icon(
+                      // 화살표 아이콘
+                      Icons.arrow_forward_sharp,
+                      color: Colors.white,
+                      size: 15.5,
+                    ),
+                  ),
+                ],
+              ),
             ),
             Stack(
               children: [
