@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
                 Text('공지',
                     style: TextStyle(
                       fontSize: 13,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w600,
                       fontFamily: "Pre",
                     )),
                 SizedBox(
