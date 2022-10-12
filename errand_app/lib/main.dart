@@ -217,13 +217,23 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 6),
-                      SizedBox(
-                        child: Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 9,
-                          color: Color(0xffB1B1B4),
+                      //Icon(
+                      //  Icons.navigate_next_sharp,
+                      //  color: Color(0xffb1b1b4),
+                      //  size: 15,
+                      //),
+                      IconButton(
+                        // iconSize: 15,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Errand()),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.navigate_next_sharp,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ],
@@ -577,14 +587,624 @@ class MyApp extends StatelessWidget {
                           Icon(
                             Icons.keyboard_arrow_right_sharp,
                             color: Color(0xff6C6C6C),
-                          )
+                          ),
                         ],
                       ),
                     ],
                   ),
                 ],
               ),
-            )
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Errand extends StatelessWidget {
+  // 심부름 리스트
+  const Errand({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // elevation: 0,
+        toolbarHeight: 48,
+        backgroundColor: Colors.white,
+        leading: // 툴 바 '타이틀' 전 아이콘 배치
+            IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          color: Color(0xff1f1f21),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        centerTitle: true,
+        title: Text(
+          '심부름',
+          style: TextStyle(
+            fontFamily: 'Pre',
+            fontSize: 17,
+            fontWeight: FontWeight.w800,
+            color: Color(0xff1f1f21),
+          ),
+        ),
+      ),
+      body: Container(
+        color: Colors.white,
+        child: ListView(
+          padding: EdgeInsets.all(20), // 안쪽
+          children: [
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 24), // 안쪽
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+              ),
+              child: ListView(
+                  // crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment:
+                          MainAxisAlignment.spaceBetween, // 양 끝으로 정렬
+                      children: [
+                        Text(
+                          '서울 광진구',
+                          style: TextStyle(
+                            fontFamily: 'Pre',
+                            fontSize: 17,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff1f1f21),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(6),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(6.0)),
+                            color: Color(0xffe0f4f8),
+                          ),
+                          child: Text(
+                            '시급 1만원',
+                            style: TextStyle(
+                              fontFamily: 'Pre',
+                              fontSize: 11,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff04bcd6),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Text(
+                      '8/6 오후 8:00',
+                      style: TextStyle(
+                        fontFamily: 'Pre',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff9a9a9a),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xfff4f8ff),
+                      ),
+                      child: Text(
+                        '팬싸 대리응모',
+                        style: TextStyle(
+                          fontFamily: 'Pre',
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xff3c88fa),
+                        ),
+                      ),
+                    ),
+                  ]),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 24),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xffbbc1d0),
+                      spreadRadius: 3,
+                      blurRadius: 3,
+                      offset: Offset(0, 3),
+                    )
+                  ]),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '서울 마포구',
+                          style: TextStyle(
+                            fontFamily: 'Pre',
+                            fontSize: 17,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff1f1f21),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(6),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(6.0)),
+                            color: Color(0xfff0e9ff),
+                          ),
+                          child: Text(
+                            '시급 5만원',
+                            style: TextStyle(
+                              fontFamily: 'Pre',
+                              fontSize: 11,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff8f5bff),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Text(
+                      '8/7 오후 12:00',
+                      style: TextStyle(
+                        fontFamily: 'Pre',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff9a9a9a),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xfff4f8ff),
+                      ),
+                      child: Text(
+                        '앨범 대리구매',
+                        style: TextStyle(
+                          fontFamily: 'Pre',
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xff3c88fa),
+                        ),
+                      ),
+                    )
+                  ]),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 24),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xffbbc1d0),
+                      spreadRadius: 3,
+                      blurRadius: 3,
+                      offset: Offset(0, 3),
+                    )
+                  ]),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '서울 구로구',
+                          style: TextStyle(
+                            fontFamily: 'Pre',
+                            fontSize: 17,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff1f1f21),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(6),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(6.0)),
+                            color: Color(0xffffecfa),
+                          ),
+                          child: Text(
+                            '시급 7천원',
+                            style: TextStyle(
+                              fontFamily: 'Pre',
+                              fontSize: 11,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xffff6cd6),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Text(
+                      '8/8 오전 7:32',
+                      style: TextStyle(
+                        fontFamily: 'Pre',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff9a9a9a),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: Color(0xfff4f8ff),
+                          ),
+                          child: Text(
+                            '앨범 대리구매',
+                            style: TextStyle(
+                              fontFamily: 'Pre',
+                              fontSize: 13,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff3c88fa),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Container(
+                          padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: Color(0xfff4f8ff),
+                          ),
+                          child: Text(
+                            '럭드 대리구매',
+                            style: TextStyle(
+                              fontFamily: 'Pre',
+                              fontSize: 13,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff3c88fa),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Container(
+                          padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: Color(0xfff4f8ff),
+                          ),
+                          child: Text(
+                            '팬싸 대리응모',
+                            style: TextStyle(
+                              fontFamily: 'Pre',
+                              fontSize: 13,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff3c88fa),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xfff4f8ff),
+                      ),
+                      child: Text(
+                        '행사 대리줄서기',
+                        style: TextStyle(
+                          fontFamily: 'Pre',
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xff3c88fa),
+                        ),
+                      ),
+                    ),
+                  ]),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 24),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xffbbc1d0),
+                      spreadRadius: 3,
+                      blurRadius: 3,
+                      offset: Offset(0, 3),
+                    )
+                  ]),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '서울 마포구',
+                          style: TextStyle(
+                            fontFamily: 'Pre',
+                            fontSize: 17,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff1f1f21),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(6),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(6.0)),
+                            color: Color(0xfff0e9ff),
+                          ),
+                          child: Text(
+                            '시급 5만원',
+                            style: TextStyle(
+                              fontFamily: 'Pre',
+                              fontSize: 11,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff8f5bff),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Text(
+                      '8/7 오후 12:00',
+                      style: TextStyle(
+                        fontFamily: 'Pre',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff9a9a9a),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xfff4f8ff),
+                      ),
+                      child: Text(
+                        '앨범 대리구매',
+                        style: TextStyle(
+                          fontFamily: 'Pre',
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xff3c88fa),
+                        ),
+                      ),
+                    )
+                  ]),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 24),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xffbbc1d0),
+                      spreadRadius: 3,
+                      blurRadius: 3,
+                      offset: Offset(0, 3),
+                    )
+                  ]),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '서울 마포구',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontFamily: 'Pre',
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff1f1f21),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(6),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(6.0)),
+                            color: Color(0xfff0e9ff),
+                          ),
+                          child: Text(
+                            '시급 5만원',
+                            style: TextStyle(
+                              fontFamily: 'Pre',
+                              fontSize: 11,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff8f5bff),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Text(
+                      '8/7 오후 12:00',
+                      style: TextStyle(
+                        fontFamily: 'Pre',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff9a9a9a),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xfff4f8ff),
+                      ),
+                      child: Text(
+                        '앨범 대리구매',
+                        style: TextStyle(
+                          fontFamily: 'Pre',
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xff3c88fa),
+                        ),
+                      ),
+                    )
+                  ]),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 24),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xffbbc1d0),
+                      spreadRadius: 3,
+                      blurRadius: 3,
+                      offset: Offset(0, 3),
+                    )
+                  ]),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '서울 마포구',
+                          style: TextStyle(
+                            fontFamily: 'Pre',
+                            fontSize: 17,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff1f1f21),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(6),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(6.0)),
+                            color: Color(0xfff0e9ff),
+                          ),
+                          child: Text(
+                            '시급 5만원',
+                            style: TextStyle(
+                              fontFamily: 'Pre',
+                              fontSize: 11,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff8f5bff),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Text(
+                      '8/7 오후 12:00',
+                      style: TextStyle(
+                        fontFamily: 'Pre',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff9a9a9a),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Color(0xfff4f8ff),
+                      ),
+                      child: Text(
+                        '앨범 대리구매',
+                        style: TextStyle(
+                          fontFamily: 'Pre',
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xff3c88fa),
+                        ),
+                      ),
+                    )
+                  ]),
+            ),
           ],
         ),
       ),
